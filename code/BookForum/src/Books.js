@@ -44,6 +44,15 @@ const books=[
         },
         Price:"15$"
     },
+    {
+        Title:"Twisted Games",
+        Author:"Ana Huang",
+        Image:{
+            src:"https://m.media-amazon.com/images/I/41DUfYuuCfL._SX322_BO1,204,203,200_.jpg",
+            alt:"Twisted",
+        },
+        Price:"10$"
+    },
 
 
 
