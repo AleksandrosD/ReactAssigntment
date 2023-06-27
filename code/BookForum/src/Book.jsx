@@ -5,6 +5,9 @@ import { PropTypes } from 'prop-types';
     const { Title, Author, Image, Price } = book; // Destructure the 'books' object
 
     return (
+        <button onClick={()=>{
+            alert("You clicked me!");
+        }}>
         <div className='grid justify-items-center p-14 hover:-translate-y-1 duration-300'>
             <img className='object-contain w-80 h-80' src={Image.src} alt={Image.alt} /> {/* Access image properties */}
             <div>
@@ -17,6 +20,7 @@ import { PropTypes } from 'prop-types';
                 <h1 className=' text-small' >Price: {Price}</h1> {/* Access title */}
             </div>
         </div>
+        </button>
     );
 }
 

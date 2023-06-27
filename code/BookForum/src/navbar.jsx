@@ -29,7 +29,7 @@ export default function Navbar() {
           <input className="w-72 py-2 px-4 pl-5 pr-10 rounded-full focus:outline-0 text-black" type="text" placeholder="Search Book..."
           name="search"></input>
           <button className="-ml-8 border-6 bg-trasparent" type="submit"><i
-            classname="fa fa-search text-gray-400"></i></button>
+            className="fa fa-search text-gray-400"></i></button>
             
           </div>
              
