@@ -1,5 +1,5 @@
 import book from "./Books"
-import { PropTypes } from 'prop-types';
+
 
 export default function First() {
     const { Title, Author, Image, Price } = book[0];
@@ -53,14 +53,3 @@ export default function First() {
     </>
     );
 }
-First.propTypes = {
-    book: PropTypes.shape({
-      Image: PropTypes.shape({
-        src: PropTypes.string,
-        alt: PropTypes.string
-      }),
-      Title: PropTypes.string,
-      Author: PropTypes.string,
-      Price: PropTypes.string
-    }).isRequired
-};

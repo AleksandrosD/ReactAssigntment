@@ -1,3 +1,5 @@
+import SearchBar from './Search';
+import books from './Books';
 export default function Navbar() {
 
     return (
@@ -19,19 +21,16 @@ export default function Navbar() {
         </div>
        
         <div className="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
-          <ul className="list-reset lg:flex justify-end flex-1 items-center">
-            {/* <li className="mr-3">
-              <a className="inline-block py-2 px-4 text-black font-bold no-underline" href="#">Search</a>
+          <ul className="list-reset lg:flex justify-end flex-auto items-center">
+           
+           
             
-            </li> */}
-           <div className="inline-block pr-10">
           
-          <input className="w-72 py-2 px-4 pl-5 pr-10 rounded-full focus:outline-0 text-black" type="text" placeholder="Search Book..."
-          name="search"></input>
-          <button className="-ml-8 border-6 bg-trasparent" type="submit"><i
-            className="fa fa-search text-gray-400"></i></button>
+          
+            <SearchBar data={books} />
+          
             
-          </div>
+           
              
         
             <li className="mr-3">
