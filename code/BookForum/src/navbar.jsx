@@ -27,10 +27,10 @@ export default function Navbar() {
             
           
           
-            <SearchBar data={books} />
+            <SearchBar data={books}  />
           
             
-           
+            
              
         
             <li className="mr-3">

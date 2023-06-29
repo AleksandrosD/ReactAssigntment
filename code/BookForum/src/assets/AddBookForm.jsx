@@ -64,6 +64,7 @@ export default function AddBookForm({hModal}){
               name="Title"
               id="title"
               className="bg-white border-4 focus:outline-none p-2"
+              required
             />
           </fieldset>
           <fieldset className="flex flex-col">

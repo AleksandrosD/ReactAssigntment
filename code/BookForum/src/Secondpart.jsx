@@ -1,37 +1,40 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Book from './Book';
-import books from './Books'; 
+//import books from './Books'; 
 import Form from './assets/AddBookForm'
 import Modal from "./assets/Modal";
 
 
 export default function SectionTwo() {
-  //const filteredJobs = jobs.filter(job => job.status === selectedStatus);
+    const [books, setJobs] = useState([]);
+  
+    useEffect(() => {
+      let ignore = false;
+      async function fetchBooks() {
+        const response = await fetch('http://localhost:3000/books');
+        const book = await response.json();
+        console.log(book)
+        if(!ignore) {
+          setJobs(book);
+        }
+        return book;
+      }
+      
+      fetchBooks();
+  
+      return () => {
+        ignore = true;
+      }
+    }, []);
+    
+
+  
   
   const bookLayout = books.map((book, i) => {
     return <Book book={book} key={i} />;
   });
   const [isModalVisible, setIsModalVisible] = useState(false);
-  //const [selectedStatus, setSelectedStatus] = useState(1);
-  
-  // const statusButtons = Object.keys(statuses).map(statusId => {
-  //   const buttonClass = classNames(
-  //     "px-4 py-2 border",
-  //     {
-  //       "bg-blue-500": selectedStatus === parseInt(statusId)
-  //     }
-  //   )
-  //   return (
-  //     <button
-  //       key={statusId}
-  //       className={buttonClass}
-  //       onClick={() => setSelectedStatus(parseInt(statusId))}
-  //     >
-  //       {statuses[statusId]}
-  //     </button>
-  //   );
-  // })
-  
+ 
  
   
  
