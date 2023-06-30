@@ -3,6 +3,7 @@ import Book from './Book';
 //import books from './Books'; 
 import Form from './assets/AddBookForm'
 import Modal from "./assets/Modal";
+//import books from "./Books"
 
 
 export default function SectionTwo() {
@@ -26,6 +27,16 @@ export default function SectionTwo() {
         ignore = true;
       }
     }, []);
+    
+    const onAddBook = (newbook) => {
+      // modal should close
+      hideModal();
+      // new job should be added to the DOM
+      setJobs((books) => {
+        return [...books, newbook];
+      });
+    };
+  
     
 
   
@@ -59,7 +70,7 @@ export default function SectionTwo() {
         isVisible={isModalVisible}
         hideModal={hideModal}
       >
-        <Form hModal={hideModal}/>
+        <Form hModal={hideModal} onAddBook={onAddBook} />
       </Modal>
     </div>
     <button className="flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={showModal} > Add Book!!

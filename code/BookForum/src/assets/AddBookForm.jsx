@@ -1,21 +1,18 @@
 import { useState } from "react";
 import PropTypes from 'prop-types';
 
-import Books from "../Books"
+//import Books from "../Books"
 
+const initialBookState={Title: "",
+Author: "",
+Image: {src:"",
+        alt:""},
+Price: "",}
 
-export default function AddBookForm({hModal}){
+export default function AddBookForm({hModal,onAddBook}){
     
-    const [bookFormState, setBookFormState] = useState({
-        Title: "",
-        Author: "",
-        Image: {src:"",
-                alt:""},
-        Price: "",
-      });
-      
-      
-      
+    const [bookFormState, setBookFormState] = useState(initialBookState);
+
       const handleInputChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -35,22 +32,42 @@ export default function AddBookForm({hModal}){
           }));
         }
       };
+      
 
-    const handleAddJobFormSubmit = (e) => {
-        e.preventDefault();
-        passBook(bookFormState);
-        hModal();
+    // const handleAddJobFormSubmit = (e) => {
+    //     e.preventDefault();
+    //     passBook(bookFormState);
+    //     hModal();
         
-        //console.log("hello")
-      }
-      function passBook(x){
-        Books.push(x);
-      }
+    //     //console.log("hello")
+    //   }
+    
+    //   function passBook(x){
+    //     Books.push(x);
+    //   }
+
+    const handleAddJobFormSubmit = async (e) => {
+      e.preventDefault();
+      hModal();
+      const preparedBooks = {
+      ...bookFormState,};
+      const response = await fetch("http://localhost:3000/books", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(preparedBooks),
+      });
+      const newbook = await response.json();
+      console.log(newbook)
+      onAddBook(newbook);
+      setBookFormState(initialBookState);
+    };
       
     return(
-        <div className=''>
+        <div>
         <form
-          onSubmit={handleAddJobFormSubmit}
+          //onSubmit={handleAddJobFormSubmit}
           className=" selection:bg-blue-200 flex flex-col gap-2 text-center "
         >
           <h1 className="text-3xl">Add a Book!</h1>
@@ -64,7 +81,6 @@ export default function AddBookForm({hModal}){
               name="Title"
               id="title"
               className="bg-white border-4 focus:outline-none p-2"
-              required
             />
           </fieldset>
           <fieldset className="flex flex-col">
@@ -114,4 +130,5 @@ export default function AddBookForm({hModal}){
 
 AddBookForm.propTypes = {
   hModal: PropTypes.func.isRequired,
+ onAddBook: PropTypes.func.isRequired,
 };

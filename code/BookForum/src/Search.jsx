@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from "react";
+
 export default function SearchBar({data}){
     const [filtrData, setFltrData] = useState([]);
     const [wordInput, setWordInput] = useState("");
@@ -22,6 +23,10 @@ export default function SearchBar({data}){
         }
 
     }
+
+    //////////////////////////////////////////
+
+    //////////////////////////////////////////
     
     return (
         <div className="bg-white inline-block flex-initial w-1/2">
