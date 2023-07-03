@@ -1,13 +1,16 @@
+
 import { PropTypes } from 'prop-types';
+import { Link } from 'react-router-dom';
+
+
 
   export default function Book({ book }) {
+ 
     
-    const { Title, Author, Image, Price } = book; 
+    const { Title, Author, Image, Price, id } = book; 
 
     return (
-        <button onClick={()=>{
-            alert("You clicked me!");
-        }}>
+        <Link to={`BR/${id}`}>
         <div className='grid justify-items-center p-14 hover:-translate-y-1 duration-300'>
             <img className='object-contain w-80 h-80' src={Image.src} alt={Image.alt} />
             <div>
@@ -20,7 +23,7 @@ import { PropTypes } from 'prop-types';
                 <h1 className=' text-small' >Price: {Price}</h1> 
             </div>
         </div>
-        </button>
+        </Link>
     );
 }
 
@@ -32,6 +35,7 @@ Book.propTypes = {
       }),
       Title: PropTypes.string,
       Author: PropTypes.string,
-      Price: PropTypes.string
+      Price: PropTypes.string,
+      id: PropTypes.number
     }).isRequired
 };
