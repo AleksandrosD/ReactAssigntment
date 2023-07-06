@@ -67,6 +67,12 @@
       "rating": "Good Book!",
       "bookId": 1,
       "id": 1
+    },
+    {
+      "name": "Anonymous",
+      "rating": "Book is Amazing!!!!",
+      "bookId": 1,
+      "id": 2
     }
   ]
 }

@@ -33,8 +33,11 @@ function EditRev() {
 
   return (
     <div className="max-w-4xl mx-auto p-8">
-      <Form method="post" className="selection:bg-blue-200 flex flex-col gap-2">
-        <h1 className="text-white">Edit Rating</h1>
+      <Form
+        method="post"
+        className="selection:bg-blue-200 flex w-auto h-auto items-center flex-col gap-2"
+      >
+        <h1 className="text-4xl text-white">Edit Rating</h1>
         <fieldset className="flex flex-col">
           <label htmlFor="title">Name</label>
           <input

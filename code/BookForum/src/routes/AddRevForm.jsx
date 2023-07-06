@@ -14,13 +14,11 @@ export async function action({ request, params }) {
     body: JSON.stringify(preparedNote),
   });
   const note = await response.json();
-  window.history.back()
-  return { note };
-  
+  window.history.back();
+  return { review };
 }
 
 function AddRevForm() {
-  
   return (
     <Form
       method="post"
@@ -40,20 +38,19 @@ function AddRevForm() {
       </fieldset>
       <fieldset className="flex flex-col">
         <label htmlFor="company">Rating</label>
-        <textarea rows="4" className="block h-40 p-2.5 w-96 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
+        <textarea
+          rows="4"
+          className="block h-40 p-2.5 w-96 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
           type="text"
           name="rating"
           id="rating"
           required
         />
       </fieldset>
-      
-  
-    
+
       <input
         className="bg-blue-500 rounded-lg w-20 hover:bg-blue-600 text-white transition mt-4 py-2 cursor-pointer "
         type="submit"
-        
       ></input>
     </Form>
   );

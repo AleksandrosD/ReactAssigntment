@@ -24,11 +24,11 @@ export async function action({ params }) {
 }
 
 function Reviews({ rev }) {
-  const { name, rating, id } = rev;
+  const { name, rating, id, bookId } = rev;
   const fetcher = useFetcher();
   let navigate = useNavigate();
   const handleEdit = () => {
-    const editUrl = `/BR/${id}/review/${id}/edit`;
+    const editUrl = `/BR/${bookId}/review/${id}/edit`;
     navigate(editUrl);
   };
 
@@ -89,5 +89,6 @@ Reviews.propTypes = {
     name: PropTypes.string.isRequired,
     rating: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
+    bookId: PropTypes.number.isRequired,
   }).isRequired,
 };
