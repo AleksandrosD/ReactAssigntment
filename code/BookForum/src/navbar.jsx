@@ -34,7 +34,7 @@ export default function Navbar() {
              
         
             <li className="mr-3">
-              <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">GitHub</a>
+              <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="https://github.com/AleksandrosD">GitHub</a>
             </li>
             <li className="mr-3">
               <a className="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">Register</a>

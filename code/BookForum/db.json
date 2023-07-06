@@ -59,16 +59,32 @@
         "alt": "Twisted"
       },
       "Price": "10$"
+    }
+  ],
+  "review": [
+    {
+      "name": "Aleksandros Doci",
+      "rating": "This book is so Good!",
+      "bookId": 3,
+      "id": 1
     },
     {
-      "Title": "",
-      "Author": "",
-      "Image": {
-        "src": "",
-        "alt": ""
-      },
-      "Price": "",
-      "id": 7
+      "name": "dfsfsdf",
+      "rating": "sdfsdffdsf",
+      "bookId": 2,
+      "id": 2
+    },
+    {
+      "name": "Aleksandros",
+      "rating": "Very good book! Love it.",
+      "bookId": 1,
+      "id": 3
+    },
+    {
+      "name": "Aleks",
+      "rating": "W book!",
+      "bookId": 1,
+      "id": 4
     }
   ]
 }

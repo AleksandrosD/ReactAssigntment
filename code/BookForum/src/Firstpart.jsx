@@ -20,9 +20,9 @@ export default function First() {
           <p className="leading-normal text-2xl mb-8">
             By: {Author}
           </p>
-          <button className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          <a className="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out" href="https://www.amazon.com/HTML-JavaScript-Mobile-Development-Dummies/dp/1118026225/ref=sr_1_6?keywords=html+and+css+for+dummies&qid=1688632905&sprefix=html+and+css+for+%2Caps%2C69&sr=8-6">
             Buy For {Price}
-          </button>
+          </a>
         </div>
        {/* <!--Right Col--> */}
         <div className="w-full md:w-3/5 py-6 text-center mx-auto">

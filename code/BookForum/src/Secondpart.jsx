@@ -14,7 +14,7 @@ export default function SectionTwo() {
       async function fetchBooks() {
         const response = await fetch('http://localhost:3000/books');
         const book = await response.json();
-        console.log(book)
+        
         if(!ignore) {
           setJobs(book);
         }

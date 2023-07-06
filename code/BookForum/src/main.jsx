@@ -1,7 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import BookRating,{loader as jobDetailLoader} from './routes/BookRating.jsx';
-
+import {action as destroyRevAction} from './routes/Reviews.jsx';
+import EditRev, {
+  loader as editRevLoader,
+  action as editRevAction
+} from "./routes/EditRev.jsx";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -9,6 +13,7 @@ import {
 import './index.css'
 import ErrorPage from './ErrorPage.jsx';
 import Root from './routes/root';
+import AddRevForm,{ action as addRevAction} from './routes/AddRevForm.jsx'
 
 
 
@@ -25,8 +30,26 @@ const router = createBrowserRouter([
     path: "/BR/:BookRatingId",
     element: <BookRating />,
     errorElement: <ErrorPage />,
-    loader: jobDetailLoader
+    loader: jobDetailLoader,
+    children:[
+      {
+      path: "review/:reviewId/destroy",
+      action: destroyRevAction,
+      },{
+        path: "review/:reviewId/edit",
+        element: <EditRev />,
+        errorElement: <ErrorPage />,
+        loader: editRevLoader,
+        action: editRevAction,
+      }
+    ]
   },
+  {
+    path: "/BR/:BookRatingId/review/new", 
+    element: <AddRevForm />,
+    errorElement: <ErrorPage />,
+    action: addRevAction
+  }
   
 
 ]);
